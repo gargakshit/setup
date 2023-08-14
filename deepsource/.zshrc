@@ -122,3 +122,4 @@ eval "$(starship init zsh)"
 alias vi=nvim
 alias vim=nvim
 export EDITOR=nvim
+export PATH="$PATH:$HOME/go/bin"
