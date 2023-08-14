@@ -37,7 +37,7 @@ install_omz() {
 }
 
 install_gui_applications() {
-	APPLICATIONS="google-chrome visual-studio-code spotify orbstack linear cron obsidian 1password slack slab 1password-cli raycast arc beeper jetbrains-toolbox rectangle git-credential-manager homebrew/cask/tailscale homebrew/cask/readdle-spark"
+	APPLICATIONS="google-chrome visual-studio-code spotify orbstack linear cron obsidian 1password slack slab 1password-cli raycast arc beeper jetbrains-toolbox rectangle git-credential-manager homebrew/cask/tailscale homebrew/cask/readdle-spark sublime-text sublime-merge"
 
 	echo "Installing GUI applications: $APPLICATIONS"
 	brew install $(echo $APPLICATIONS)
