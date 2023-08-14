@@ -54,6 +54,7 @@ copy_configs() {
 	echo "Decreasing key repeat delay"
 	defaults write NSGlobalDomain InitialKeyRepeat -int 12
 	defaults write NSGlobalDomain KeyRepeat -int 8
+	defaults write -g ApplePressAndHoldEnabled 0
 
 	echo "Defaulting to plaintext mode for textedit"
 	defaults write com.apple.TextEdit RichText -int 0
