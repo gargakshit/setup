@@ -82,6 +82,7 @@ plugins=(
 	kubectl
 	zsh-autosuggestions
 	brew
+	z
 )
 
 source $ZSH/oh-my-zsh.sh
