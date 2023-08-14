@@ -17,7 +17,7 @@ install_rosetta() {
 }
 
 install_cli_applications() {
-	APPLICATIONS="go pyenv tmux tree google-cloud-sdk ffmpeg neovim htop starship kubectl teleport"
+	APPLICATIONS="go pyenv tmux tree google-cloud-sdk ffmpeg neovim htop starship kubectl teleport k9s"
 
 	echo "Installing: $APPLICATIONS"
 	brew install $(echo $APPLICATIONS)
