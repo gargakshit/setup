@@ -17,7 +17,7 @@ install_rosetta() {
 }
 
 install_cli_applications() {
-	APPLICATIONS="go pyenv tmux tree google-cloud-sdk neovim htop starship kubectl teleport k9s"
+	APPLICATIONS="go pyenv tmux tree google-cloud-sdk neovim htop starship kubectl teleport k9s protobuf tokei fzf"
 
 	echo "Installing: $APPLICATIONS"
 	brew install $(echo $APPLICATIONS)
@@ -92,6 +92,13 @@ copy_configs() {
 make_dir_structure() {
 	echo "Creating directory structure for work!"
 	mkdir -pv ~/work/{akshit-deepsource,DeepSourceCorp}
+}
+
+install_go_apps() {
+	echo "Installing go apps"
+
+	go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+	go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 }
 
 cleanup() {
