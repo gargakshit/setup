@@ -9,18 +9,14 @@ install_homebrew() {
 
 	brew analytics off
 	brew tap homebrew/cask-fonts
+
+	echo "Installing homebrew dependencies"
+	brew bundle -v
 }
 
 install_rosetta() {
 	echo "Installing rosetta 2"
 	softwareupdate --install-rosetta --agree-to-license
-}
-
-install_cli_applications() {
-	APPLICATIONS="go pyenv tmux tree google-cloud-sdk neovim htop starship kubectl teleport k9s protobuf tokei fzf"
-
-	echo "Installing: $APPLICATIONS"
-	brew install $(echo $APPLICATIONS)
 }
 
 install_nvm() {
@@ -34,20 +30,6 @@ install_omz() {
 
 	echo "Installing zsh-autosuggestions"
 	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-}
-
-install_gui_applications() {
-	APPLICATIONS="google-chrome visual-studio-code spotify orbstack linear-linear cron obsidian 1password slack slab 1password-cli raycast arc beeper jetbrains-toolbox rectangle git-credential-manager homebrew/cask/tailscale homebrew/cask/readdle-spark sublime-text sublime-merge figma homebrew/cask/zoom"
-
-	echo "Installing GUI applications: $APPLICATIONS"
-	brew install $(echo $APPLICATIONS)
-}
-
-install_fonts() {
-	FONTS="font-jetbrains-mono font-iosevka"
-
-	echo "Installing fonts: $FONTS"
-	brew install $(echo $FONTS)
 }
 
 copy_configs() {
@@ -89,11 +71,6 @@ copy_configs() {
 	killall SystemUIServer
 }
 
-make_dir_structure() {
-	echo "Creating directory structure for work!"
-	mkdir -pv ~/work/{akshit-deepsource,DeepSourceCorp}
-}
-
 install_go_apps() {
 	echo "Installing go apps"
 
@@ -109,15 +86,3 @@ cleanup() {
 all_set() {
 	echo "You are all set!"
 }
-
-install_homebrew
-install_rosetta
-install_nvm
-install_cli_applications
-install_omz
-install_fonts
-install_gui_applications
-copy_configs
-make_dir_structure
-cleanup
-all_set

@@ -1,0 +1,84 @@
+# All of the dependencies I need on a "base development mac".
+# Can switch environments by setting the HOMEBREW_DEV_ENV env var.
+# Valid options are: base (default), personal, fly.
+
+dev_env = ENV["HOMEBREW_DEV_ENV"] || "base"
+printf "Got HOMEBREW_DEV_ENV=%s\n", dev_env
+
+fly = dev_env == "fly"
+personal = dev_env == "personal"
+
+tap "homebrew/cask-fonts"
+
+# Formulae
+brew "go"
+brew "tmux"
+brew "pyenv"
+brew "tree"
+brew "neovim"
+brew "starship"
+brew "htop"
+brew "tokei"
+brew "fzf"
+brew "llvm"
+brew "direnv"
+brew "overmind"
+brew "asdf"
+brew "automake"
+brew "openssl"
+brew "wxwidgets"
+brew "libxslt"
+brew "fop"
+brew "libpq"
+brew "libsodium"
+brew "flyctl"
+brew "ripgrep"
+brew "fd"
+brew "lft"
+brew "nmap"
+brew "neofetch"
+brew "iperf3"
+brew "postgresql@14"
+brew "mtr"
+brew "jq"
+
+# Casks
+cask "visual-studio-code"
+cask "google-chrome"
+cask "orbstack"
+cask "spotify"
+cask "slack" if fly
+cask "1password"
+cask "1password-cli"
+cask "raycast"
+cask "rectangle"
+cask "git-credential-manager"
+cask "sublime-merge"
+cask "sublime-text"
+cask "iterm2"
+cask "stats"
+cask "tailscale"
+cask "gather" if fly
+cask "wireshark"
+cask "MonitorControl"
+cask "yubico-yubikey-manager"
+cask "notion-calendar"
+cask "zed"
+cask "arc" if personal
+
+# Fonts
+cask "font-jetbrains-mono"
+cask "font-iosevka"
+
+# VSCode stuff
+vscode "golang.go"
+vscode "mkhl.direnv"
+vscode "ms-azuretools.vscode-docker"
+vscode "JakeBecker.elixir-ls"
+vscode "usernamehw.errorlens"
+vscode "tamasfe.even-better-toml"
+vscode "eamodio.gitlens"
+vscode "phoenixframework.phoenix"
+vscode "esbenp.prettier-vscode"
+vscode "ms-python.python"
+vscode "asvetliakov.vscode-neovim"
